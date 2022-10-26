@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#2196F3</color>
+    <color name="primaryDark">#0068BA</color>
+
+    <color name="accent">#FD1A56</color>
+
+    <!-- Note type -->
+    <color name="noteGeneral">#FDD835</color>
+    <color name="noteWork">#469AE4</color>
+    <color name="noteLife">#67EC7F</color>
+    <color name="noteMusic">#00ACC1</color>
+    <color name="noteFood">#F17953</color>
+
+    <color name="text">#FFF</color>
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="background">#F8F8F8</color>
+</resources>

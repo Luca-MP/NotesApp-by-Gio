@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Notes App</string>
+    <string name="note_hint">Type your note here…</string>
+    <string name="new_note">New note</string>
+    <string name="empty_note_error">Cannot save an empty note!</string>
+
+    <string name="type_note_header">%1$s note</string>
+
+    <!-- Content descriptions -->
+    <string name="add_new_note_des">Add new note</string>
+    <string name="save_note_des">Save note</string>
+    <string name="empty_list_des">Empty list</string>
+    <string name="edit_note_des">Edit note</string>
+
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+    <string name="remove_note_title">Remove note</string>
+    <string name="remove_note_message">Are you sure to remove the note?</string>
+    <string name="empty_list_message_ideas">Any ideas?</string>
+    <string name="empty_list_message_write">Write it down!</string>
+</resources>

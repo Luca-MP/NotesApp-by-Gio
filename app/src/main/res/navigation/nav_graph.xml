@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="it.giobalda.notesapp.ui.main.MainFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/to_new_note"
+            app:destination="@id/newNoteFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/open_note_detail"
+            app:destination="@id/noteDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/newNoteFragment"
+        android:name="it.giobalda.notesapp.ui.new_note.NewNoteFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_new_note">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="note"
+            android:defaultValue="@null"
+            app:argType="it.giobalda.notesapp.models.note.Note"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="it.giobalda.notesapp.ui.note_detail.NoteDetailFragment"
+        android:label="{title}"
+        tools:layout="@layout/fragment_note_detail">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="note"
+            app:argType="it.giobalda.notesapp.models.note.Note" />
+        <action
+            android:id="@+id/edit_note"
+            app:destination="@id/newNoteFragment"
+            app:popUpTo="@id/mainFragment" />
+    </fragment>
+</navigation>

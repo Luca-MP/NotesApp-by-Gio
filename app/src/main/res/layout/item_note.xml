@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/margin_1x"
+    app:cardElevation="0dp"
+    app:cardUseCompatPadding="true"
+    tools:cardBackgroundColor="@color/accent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:padding="@dimen/margin_2x"
+            android:textColor="@color/text"
+            android:textSize="@dimen/text_base"
+            tools:text="Wait a minute, doc. Are you telling me you built A time Machine...out of a DeLorean?" />
+
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

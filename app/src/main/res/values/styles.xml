@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Main Theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+
+        <item name="snackbarStyle">@style/AppTheme.Snackbar</item>
+        <item name="snackbarButtonStyle">@style/AppTheme.Snackbar.Button</item>
+        <item name="snackbarTextViewStyle">@style/AppTheme.Snackbar.TextView</item>
+    </style>
+
+    <!-- Snackbar -->
+    <style name="AppTheme.Snackbar" parent="@style/Widget.MaterialComponents.Snackbar.FullWidth">
+        <item name="android:padding">@dimen/margin_2x</item>
+        <item name="android:background">@color/primaryDark</item>
+    </style>
+
+    <style name="AppTheme.Snackbar.TextView" parent="@style/Widget.MaterialComponents.Snackbar.TextView">
+        <item name="android:textAlignment">center</item>
+        <item name="android:maxLines">2</item>
+    </style>
+
+    <style name="AppTheme.Snackbar.Button" parent="@style/Widget.MaterialComponents.Button.TextButton.Snackbar">
+        <item name="android:textColor">#FFF</item>
+    </style>
+
+    <!-- Button -->
+
+    <style name="AppTheme.Fab" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="elevation">0dp</item>
+        <item name="fabCustomSize">@dimen/fab_size</item>
+        <item name="maxImageSize">@dimen/fab_icon_size</item>
+        <item name="tint">@android:color/white</item>
+    </style>
+</resources>
