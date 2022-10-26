@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import androidx.navigation.fragment.navArgs
 import it.giobalda.notesapp.R
 import it.giobalda.notesapp.databinding.FragmentNewNoteBinding
 import it.giobalda.notesapp.models.note.Note
@@ -20,15 +19,12 @@ class NewNoteFragment : BaseFragment() {
         FragmentNewNoteBinding.inflate(layoutInflater)
     }
 
-    private val args by navArgs<NewNoteFragmentArgs>()
-
-    private val noteTypes = NoteType.values()
+    val noteTypes = NoteType.values()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setupView()
-        setupEditViewIfNecessary()
     }
 
     private fun setupView() {
@@ -74,9 +70,8 @@ class NewNoteFragment : BaseFragment() {
                 val noteText = etText.text.toString()
 
                 if (noteText.isNotBlank()) { //valid note
-                    noteViewModel.insert(
+                    noteViewModel.addToList(
                         Note(
-                            id = args.note?.id ?: 0,
                             text = noteText,
                             type = noteTypes[spinnerType.selectedItemPosition]
                         )
@@ -90,22 +85,6 @@ class NewNoteFragment : BaseFragment() {
                     )
                 }
             }
-        }
-    }
-
-    /**
-     * If [args] contains a note to edit -> setup view
-     */
-    private fun setupEditViewIfNecessary() {
-        val note = args.note ?: return
-
-        val (_, text, type) = note
-
-        binding.apply {
-            etText.setText(text)
-
-            val typeIndex = noteTypes.indexOf(type)
-            spinnerType.setSelection(typeIndex)
         }
     }
 }

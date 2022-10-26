@@ -2,7 +2,6 @@ package it.giobalda.notesapp.ui.note_detail
 
 import android.os.Bundle
 import androidx.navigation.fragment.navArgs
-import it.giobalda.notesapp.R
 import it.giobalda.notesapp.databinding.FragmentNoteDetailBinding
 import it.giobalda.notesapp.ui.base.BaseFragment
 
@@ -31,15 +30,6 @@ class NoteDetailFragment : BaseFragment() {
                     type.colorId
                 )
             )
-
-            btnEdit.setOnClickListener {
-                NoteDetailFragmentDirections
-                    .editNote(
-                        title = getString(R.string.edit_note_des),
-                        note = args.note
-                    )
-                    .go()
-            }
         }
     }
 }

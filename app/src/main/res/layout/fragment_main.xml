@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".ui.main.MainFragment">
 
+    <!--
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_notes"
         android:layout_width="match_parent"
@@ -17,7 +18,14 @@
         android:padding="@dimen/margin_2x"
         app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
         app:spanCount="2"
-        tools:listitem="@layout/item_note" />
+        tools:listitem="@layout/item_note" /> -->
+
+    <LinearLayout
+        android:id="@+id/ll_notes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_2x" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btn_new_note"
@@ -32,6 +40,6 @@
     <include
         android:id="@+id/empty_list_view"
         layout="@layout/ll_empty_list"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

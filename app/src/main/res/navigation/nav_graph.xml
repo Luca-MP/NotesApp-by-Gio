@@ -24,17 +24,8 @@
     <fragment
         android:id="@+id/newNoteFragment"
         android:name="it.giobalda.notesapp.ui.new_note.NewNoteFragment"
-        android:label="{title}"
-        tools:layout="@layout/fragment_new_note">
-        <argument
-            android:name="title"
-            app:argType="string" />
-        <argument
-            android:name="note"
-            android:defaultValue="@null"
-            app:argType="it.giobalda.notesapp.models.note.Note"
-            app:nullable="true" />
-    </fragment>
+        android:label="@string/new_note"
+        tools:layout="@layout/fragment_new_note" />
     <fragment
         android:id="@+id/noteDetailFragment"
         android:name="it.giobalda.notesapp.ui.note_detail.NoteDetailFragment"
@@ -46,9 +37,5 @@
         <argument
             android:name="note"
             app:argType="it.giobalda.notesapp.models.note.Note" />
-        <action
-            android:id="@+id/edit_note"
-            app:destination="@id/newNoteFragment"
-            app:popUpTo="@id/mainFragment" />
     </fragment>
 </navigation>
