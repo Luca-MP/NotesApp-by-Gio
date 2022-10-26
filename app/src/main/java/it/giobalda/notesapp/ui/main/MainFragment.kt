@@ -34,13 +34,13 @@ class MainFragment : BaseFragment() {
     }
 
     private fun setupView() {
-        binding.recyclerNotes.adapter = noteAdapter
+        binding.apply {
+            recyclerNotes.adapter = noteAdapter
 
-        //open new note view
-        binding.btnNewNote.setOnClickListener {
-            MainFragmentDirections.toNewNote(
-                title = getString(R.string.new_note)
-            ).go()
+            //open new note view
+            btnNewNote.setOnClickListener {
+                MainFragmentDirections.toNewNote().go()
+            }
         }
     }
 
@@ -69,7 +69,7 @@ class MainFragment : BaseFragment() {
             message = getString(R.string.remove_note_message),
             cancelable = true,
             onPositiveCallback = {
-                noteViewModel.delete(note)
+                noteViewModel.removeFromList(note)
             }
         )
     }

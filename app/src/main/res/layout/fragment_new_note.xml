@@ -55,6 +55,7 @@
                 style="@style/AppTheme.Fab"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|end"
                 android:layout_marginEnd="@dimen/margin_2x"
                 android:layout_marginBottom="@dimen/margin_2x"
                 android:contentDescription="@string/save_note_des"
