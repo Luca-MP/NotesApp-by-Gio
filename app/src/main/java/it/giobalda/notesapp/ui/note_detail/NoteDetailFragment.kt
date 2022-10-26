@@ -1,8 +1,5 @@
 package it.giobalda.notesapp.ui.note_detail
 
-import android.os.Bundle
-import androidx.navigation.fragment.navArgs
-import it.giobalda.notesapp.R
 import it.giobalda.notesapp.databinding.FragmentNoteDetailBinding
 import it.giobalda.notesapp.ui.base.BaseFragment
 
@@ -12,14 +9,9 @@ class NoteDetailFragment : BaseFragment() {
         FragmentNoteDetailBinding.inflate(layoutInflater)
     }
 
-    private val args by navArgs<NoteDetailFragmentArgs>()
+    //private val args by navArgs<NoteDetailFragmentArgs>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setupView()
-    }
-
+    /*
     private fun setupView() {
         val (_, text, type) = args.note
 
@@ -31,15 +23,6 @@ class NoteDetailFragment : BaseFragment() {
                     type.colorId
                 )
             )
-
-            btnEdit.setOnClickListener {
-                NoteDetailFragmentDirections
-                    .editNote(
-                        title = getString(R.string.edit_note_des),
-                        note = args.note
-                    )
-                    .go()
-            }
         }
-    }
+    }*/
 }

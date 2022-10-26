@@ -1,8 +1,8 @@
 package it.giobalda.notesapp.models.note
 
-import androidx.lifecycle.*
-import it.giobalda.notesapp.App
-import kotlinx.coroutines.launch
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
 /**
  * ViewModel
@@ -13,23 +13,19 @@ import kotlinx.coroutines.launch
 
 class NoteViewModel : ViewModel() {
 
-    private val repository: NoteRepository by lazy { App.instance.noteRepository }
+    //ready to be observed | not mutable!
+    val allNotes: LiveData<List<Note>>
+        get() = _notesList
 
-    val allNotes: LiveData<List<Note>> = repository.all.asLiveData()
+    private val _notesList = MutableLiveData<List<Note>>()
 
-    /**
-     * Use [viewModelScope] to launch a coroutine and call the [repository] insert method in background
-     *
-     * A coroutine is a lightweight thread, great for background async tasks
-     * More coroutines can work in the same thread
-     *
-     * background = not on main thread -> app performance is not affected
-     */
-    fun insert(note: Note) = viewModelScope.launch {
-        repository.insert(note)
+    fun addToList(note: Note) {
+        val currentList = _notesList.value ?: listOf()
+        _notesList.value = currentList + note
     }
 
-    fun delete(note: Note) = viewModelScope.launch {
-        repository.delete(note)
+    fun removeFromList(note: Note) {
+        val currentList = _notesList.value ?: listOf()
+        _notesList.value = currentList - note
     }
 }
