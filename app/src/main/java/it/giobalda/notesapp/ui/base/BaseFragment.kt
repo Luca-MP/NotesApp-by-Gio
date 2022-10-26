@@ -1,20 +1,14 @@
 package it.giobalda.notesapp.ui.base
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDirections
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.viewbinding.ViewBinding
 import it.giobalda.notesapp.R
 import it.giobalda.notesapp.models.note.NoteViewModel
-import timber.log.Timber
-import kotlin.Exception
 
 /**
  * [BaseFragment]
@@ -22,6 +16,7 @@ import kotlin.Exception
  */
 abstract class BaseFragment : Fragment() {
 
+    //all implementation must implement it
     protected abstract val binding: ViewBinding
 
     /**
@@ -36,32 +31,5 @@ abstract class BaseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = binding.root
-
-    override fun onPause() {
-        super.onPause()
-
-        closeKeyboard()
-    }
-
-    /**
-     * Avoid bad route exception
-     */
-    fun NavDirections.go() {
-        try {
-            findNavController().navigate(this)
-        } catch (ex: Exception) {
-            Timber.d("Bad route")
-        }
-    }
-
-    fun goBack() {
-        findNavController().navigateUp()
-    }
-
-    private fun closeKeyboard() {
-        val inputMethodManager =
-            requireContext().getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputMethodManager.hideSoftInputFromWindow(view?.windowToken, 0)
-    }
 
 }

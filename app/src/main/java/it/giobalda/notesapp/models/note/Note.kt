@@ -1,8 +1,6 @@
 package it.giobalda.notesapp.models.note
 
 import android.os.Parcelable
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -15,10 +13,8 @@ import kotlinx.parcelize.Parcelize
  * @Parcelize + [Parcelable] extension -> notes will be [Parcelable], so they can be sent to fragments
  */
 
-@Entity
 @Parcelize
 data class Note(
-    @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val text: String,
     val type: NoteType = NoteType.GENERAL,
